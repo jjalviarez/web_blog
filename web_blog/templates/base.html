@@ -62,9 +62,9 @@
             <li class="nav-item {% if request.path ==  '/about' %} active {% endif %} ">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %}">About</a>
             </li>
-            <li class="nav-item {% if request.path ==  '/webapp/servicios/' %} active {% endif %} ">
+            <li class="nav-item {% if request.path ==  '/servicios/' %} active {% endif %} ">
               {# URL provided by django-allauth/account/urls.py #}
-              <a id="sign-up-link" class="nav-link text-uppercase text-expanded" href="{% url 'webapp:servicios' %}">Servicios</a>
+              <a id="sign-up-link" class="nav-link text-uppercase text-expanded" href="{% url 'servicios:servicios' %}">Servicios</a>
             </li>
             <li class="nav-item {% if request.path ==  '/webapp/tienda/' %} active {% endif %} ">
               {# URL provided by django-allauth/account/urls.py #}
