@@ -74,9 +74,9 @@
               {# URL provided by django-allauth/account/urls.py #}
               <a id="sign-up-link" class="nav-link text-uppercase text-expanded" href="{% url 'webapp:contacto' %}">Contacto</a>
             </li>
-            <li class="nav-item {% if request.path ==  '/webapp/blog/' %} active {% endif %} ">
+            <li class="nav-item {% if request.path ==  '/blog/' %} active {% endif %} ">
               {# URL provided by django-allauth/account/urls.py #}
-              <a id="log-in-link" class="nav-link text-uppercase text-expanded" href="{% url 'webapp:blog' %}">Blog</a>
+              <a id="log-in-link" class="nav-link text-uppercase text-expanded" href="{% url 'blog:blog' %}">Blog</a>
             </li>
           </ul>
         </div>
