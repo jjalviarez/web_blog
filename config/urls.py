@@ -16,7 +16,8 @@ urlpatterns = [
     path("users/", include("web_blog.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    path("webapp/", include("web_blog.webapp.urls")),
+    path("webapp/", include("web_blog.webapp.urls", namespace="webapp")),
+    path("servicios/", include("web_blog.servicios.urls", namespace="servicios")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
