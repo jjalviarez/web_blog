@@ -63,19 +63,16 @@
               <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %}">About</a>
             </li>
             <li class="nav-item {% if request.path ==  '/servicios/' %} active {% endif %} ">
-              {# URL provided by django-allauth/account/urls.py #}
               <a id="sign-up-link" class="nav-link text-uppercase text-expanded" href="{% url 'servicios:servicios' %}">Servicios</a>
             </li>
             <li class="nav-item {% if request.path ==  '/webapp/tienda/' %} active {% endif %} ">
-              {# URL provided by django-allauth/account/urls.py #}
               <a id="log-in-link" class="nav-link text-uppercase text-expanded" href="{% url 'webapp:tienda' %}">Tienda</a>
             </li>
             <li class="nav-item {% if request.path ==  '/webapp/contacto/' %} active {% endif %} ">
-              {# URL provided by django-allauth/account/urls.py #}
               <a id="sign-up-link" class="nav-link text-uppercase text-expanded" href="{% url 'webapp:contacto' %}">Contacto</a>
             </li>
-            <li class="nav-item {% if request.path ==  '/blog/' %} active {% endif %} ">
-              {# URL provided by django-allauth/account/urls.py #}
+            {% url 'blog:blog' as url_blog_blog %}
+            <li class="nav-item {% if url_blog_blog in request.path %} active {% endif %} ">
               <a id="log-in-link" class="nav-link text-uppercase text-expanded" href="{% url 'blog:blog' %}">Blog</a>
             </li>
           </ul>
