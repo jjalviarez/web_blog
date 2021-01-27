@@ -140,6 +140,10 @@ p {
   position: relative;
 }
 
+.intro .intro-text .author {
+text-align: left;
+}
+
 @media (min-width: 992px) {
   .intro .intro-img {
     width: 75%;
