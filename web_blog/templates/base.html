@@ -68,8 +68,9 @@
             <li class="nav-item {% if request.path ==  '/webapp/tienda/' %} active {% endif %} ">
               <a id="log-in-link" class="nav-link text-uppercase text-expanded" href="{% url 'webapp:tienda' %}">Tienda</a>
             </li>
-            <li class="nav-item {% if request.path ==  '/webapp/contacto/' %} active {% endif %} ">
-              <a id="sign-up-link" class="nav-link text-uppercase text-expanded" href="{% url 'webapp:contacto' %}">Contacto</a>
+            {% url 'contact:contact' as url_contact_contact %}
+            <li class="nav-item {% if url_contact_contact in request.path %} active {% endif %} ">
+              <a id="sign-up-link" class="nav-link text-uppercase text-expanded" href="{% url 'contact:contact' %}">Contacto</a>
             </li>
             {% url 'blog:blog' as url_blog_blog %}
             <li class="nav-item {% if url_blog_blog in request.path %} active {% endif %} ">

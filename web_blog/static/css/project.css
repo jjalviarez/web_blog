@@ -300,3 +300,9 @@ ul.errorlist{
   font-style: italic;
   color: red;
 }
+
+
+
+form.contact-form label {
+  color: #ffffff;
+}
