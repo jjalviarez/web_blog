@@ -1,5 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.contrib import messages
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from .forms import ContactForm
+from django.core.mail import EmailMessage
 #from .models import Contact
 
 # Create your views here.
@@ -12,9 +14,37 @@ def contact(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
+            '''email=EmailMessage(
+                'Email de Contacto',
+                'Usuario:{}\nEmail:{}\nMensaje:{}'.format(
+                    form.cleaned_data['name'],
+                    form.cleaned_data['email'],
+                    form.cleaned_data['content']
+                ),
+                'contacto@correo.com',
+                ['contacto@correo.com'],
+                reply_to=[form.cleaned_data['email']]
+            )'''
+            email = EmailMessage(
+                subject = 'Thats your subject',
+                body = 'That’s your message body',
+                from_email = '',
+                to = ['jjafblin@gmail.com'],
+                reply_to = ['whoever@itmaybe.com'],
+            )
+            email.send()
+            try:
+                messages.add_message(
+                    request, messages.SUCCESS, "Mensaje enviado"
+                )
+            except:
+                messages.add_message(
+                    request, messages.ERROR, "Error Al enviar mensaje"
+                )
+
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('')
+            return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
