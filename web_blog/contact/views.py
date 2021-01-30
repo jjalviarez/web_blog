@@ -14,7 +14,7 @@ def contact(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            '''email=EmailMessage(
+            email=EmailMessage(
                 'Email de Contacto',
                 'Usuario:{}\nEmail:{}\nMensaje:{}'.format(
                     form.cleaned_data['name'],
@@ -24,16 +24,9 @@ def contact(request):
                 'contacto@correo.com',
                 ['contacto@correo.com'],
                 reply_to=[form.cleaned_data['email']]
-            )'''
-            email = EmailMessage(
-                subject = 'Thats your subject',
-                body = 'That’s your message body',
-                from_email = '',
-                to = ['jjafblin@gmail.com'],
-                reply_to = ['whoever@itmaybe.com'],
             )
-            email.send()
             try:
+                email.send()
                 messages.add_message(
                     request, messages.SUCCESS, "Mensaje enviado"
                 )
