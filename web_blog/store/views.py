@@ -1,18 +1,6 @@
-
 from django.shortcuts import render, HttpResponse
 
-
 # Create your views here.
+def store(request):
 
-def home(request):
-
-    return render(request,'pages/home.html')
-
-
-
-
-
-
-
-
-
+    return render(request,'store/store.html')

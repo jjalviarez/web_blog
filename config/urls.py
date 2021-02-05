@@ -20,6 +20,7 @@ urlpatterns = [
     path("servicios/", include("web_blog.servicios.urls", namespace="servicios")),
     path("blog/", include("web_blog.blog.urls", namespace="blog")),
     path("contact-us/", include("web_blog.contact.urls", namespace="contact")),
+    path("store/", include("web_blog.store.urls", namespace="store")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
