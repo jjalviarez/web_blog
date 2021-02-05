@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+  <h1>Contacto</h1>
+    <div class="contact-form p-5">
+      <form class="form-group" action="{% url 'contact:contact' %}" method="post">
+        {% csrf_token %}
+        <table>{{ form.as_table }}</table>
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </form>
+    </div>
+{% endblock content %}

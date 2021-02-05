@@ -76,6 +76,7 @@ LOCAL_APPS = [
     "web_blog.webapp.apps.WebappConfig",
     "web_blog.servicios.apps.ServiciosConfig",
     "web_blog.blog.apps.BlogConfig",
+    "web_blog.contact.apps.ContactConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
