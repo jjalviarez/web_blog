@@ -4,5 +4,38 @@
 
 {% block content %}
   <h1>Store</h1>
-  <p>Store</p>
+  {% for product in products %}
+
+
+
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded servicios" src="{{ product.image.url }}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">{{ product.name }}</span>
+            <span class="section-heading-upper">{{ product.price }}</span>
+          </h2>
+          <p class="author">{{ product.availability }}</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% endfor %}
+
+  <section class="page-section clearfix">
+    <div class="container">
+      <ul class="list-inline d-flex justify-content-center">
+        {% for category in categories %}
+            <li class="list-inline-item">
+            <a class="btn btn-outline-secondary" href="{% url 'blog:category' category.id %}">{{ category.name }}</a>
+            </li>
+        {% endfor %}
+      </ul>
+  </div>
+  </section>
+
 {% endblock content %}
