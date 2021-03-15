@@ -1,13 +1,8 @@
-{% extends "base.html" %}
-
-{% block title %}Store{% endblock %}
-
-{% block content %}
-  <h1>Store</h1>
+{% extends "base.html" %} {% block title %}Store{% endblock %} {% block content %}
+<h1>Store</h1>
+<div class="row">
   {% for product in products %}
-
-
-
+  <!--
   <section class="page-section clearfix">
     <div class="container">
       <div class="intro">
@@ -23,19 +18,32 @@
       </div>
     </div>
   </section>
-
-  {% endfor %}
-
-  <section class="page-section clearfix">
-    <div class="container">
-      <ul class="list-inline d-flex justify-content-center">
-        {% for category in categories %}
-            <li class="list-inline-item">
-            <a class="btn btn-outline-secondary" href="{% url 'blog:category' category.id %}">{{ category.name }}</a>
-            </li>
-        {% endfor %}
-      </ul>
+  -->
+  <div class="col-md-4">
+    <div class="card m-3" style="width: 100%">
+      <div class="embed-responsive embed-responsive-4by3">
+        <img class="card-img-top embed-responsive-item" src="{{ product.image.url }}" alt="{{ product.name }}" />
+      </div>
+      <div class="card-body text-center">
+        <h4 class="card-title">{{ product.name }}</h4>
+        <p class="card-text">${{ product.price }}</p>
+      </div>
+    </div>
   </div>
-  </section>
+  {% endfor %}
+</div>
 
+<!--
+<section class="page-section clearfix">
+  <div class="container">
+    <ul class="list-inline d-flex justify-content-center">
+      {% for category in categories %}
+      <li class="list-inline-item">
+        <a class="btn btn-outline-secondary" href="{% url 'blog:category' category.id %}">{{ category.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+-->
 {% endblock content %}
