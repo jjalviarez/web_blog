@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %}Store{% endblock %} {% block content %}
+<h1>Store</h1>
+<div class="row">
+  {% for product in products %}
+  <!--
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded servicios" src="{{ product.image.url }}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">{{ product.name }}</span>
+            <span class="section-heading-upper">{{ product.price }}</span>
+          </h2>
+          <p class="author">{{ product.availability }}</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+  <div class="col-md-4">
+    <div class="card m-3" style="width: 100%">
+      <div class="embed-responsive embed-responsive-4by3">
+        <img class="card-img-top embed-responsive-item" src="{{ product.image.url }}" alt="{{ product.name }}" />
+      </div>
+      <div class="card-body text-center">
+        <h4 class="card-title">{{ product.name }}</h4>
+        <p class="card-text">${{ product.price }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!--
+<section class="page-section clearfix">
+  <div class="container">
+    <ul class="list-inline d-flex justify-content-center">
+      {% for category in categories %}
+      <li class="list-inline-item">
+        <a class="btn btn-outline-secondary" href="{% url 'blog:category' category.id %}">{{ category.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+-->
+{% endblock content %}

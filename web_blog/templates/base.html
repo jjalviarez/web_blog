@@ -65,8 +65,8 @@
             <li class="nav-item {% if request.path ==  '/servicios/' %} active {% endif %} ">
               <a id="sign-up-link" class="nav-link text-uppercase text-expanded" href="{% url 'servicios:servicios' %}">Servicios</a>
             </li>
-            <li class="nav-item {% if request.path ==  '/webapp/tienda/' %} active {% endif %} ">
-              <a id="log-in-link" class="nav-link text-uppercase text-expanded" href="{% url 'webapp:tienda' %}">Tienda</a>
+            <li class="nav-item {% if request.path ==  '/store/' %} active {% endif %} ">
+              <a id="log-in-link" class="nav-link text-uppercase text-expanded" href="{% url 'store:store' %}">Tienda</a>
             </li>
             {% url 'contact:contact' as url_contact_contact %}
             <li class="nav-item {% if url_contact_contact in request.path %} active {% endif %} ">
